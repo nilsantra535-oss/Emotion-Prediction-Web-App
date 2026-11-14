@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6fb">
+  <title>Emote — a little feeling check</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Emote home">
+        <span class="brand-mark" aria-hidden="true">e</span>
+        <span>emote</span>
+      </a>
+      <span class="privacy-note"><span class="privacy-dot"></span> Your words stay on this device</span>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">A LITTLE FEELING CHECK</p>
+      <h1 id="page-title">What’s the feeling<br>behind your words?</h1>
+      <p class="intro-copy">A quick, gentle read of the emotion in a sentence or two.</p>
+    </section>
+
+    <section class="workspace" aria-label="Emotion predictor">
+      <div class="card composer">
+        <label for="text-input">Your text</label>
+        <textarea id="text-input" maxlength="500" placeholder="“I feel so happy and excited about this!”" aria-describedby="input-help"></textarea>
+        <div class="input-footer">
+          <span id="input-help">A sentence or short thought is perfect.</span>
+          <span id="char-count">0 / 500</span>
+        </div>
+        <button id="predict-button" type="button">
+          <span>Find the feeling</span>
+          <span class="button-arrow" aria-hidden="true">→</span>
+        </button>
+        <p id="error-message" class="error-message" role="alert" hidden></p>
+      </div>
+
+      <section id="result-card" class="card result-card" aria-live="polite" hidden>
+        <div class="result-heading">
+          <span class="result-kicker">THE FEELING THAT COMES THROUGH</span>
+          <span id="result-icon" class="result-icon" aria-hidden="true"></span>
+        </div>
+        <h2 id="result-emotion"></h2>
+        <p id="result-description" class="result-description"></p>
+        <div class="confidence-row">
+          <span>Confidence</span>
+          <strong id="result-confidence"></strong>
+        </div>
+        <div class="confidence-track" aria-hidden="true"><span id="confidence-bar"></span></div>
+        <p class="confidence-note">A simple word-pattern estimate, not a clinically validated or calibrated model.</p>
+      </section>
+    </section>
+
+    <section class="history-section" aria-labelledby="history-title">
+      <div class="history-heading">
+        <div>
+          <p class="eyebrow">YOUR RECENT CHECK-INS</p>
+          <h2 id="history-title">A little history</h2>
+        </div>
+        <button id="clear-history" class="text-button" type="button" hidden>Clear</button>
+      </div>
+      <div id="history-list" class="history-list">
+        <p id="empty-history" class="empty-history">Your recent predictions will show up here.</p>
+      </div>
+    </section>
+
+    <footer>Made for a moment of reflection <span aria-hidden="true">✳</span></footer>
+  </main>
+</body>
+</html>
