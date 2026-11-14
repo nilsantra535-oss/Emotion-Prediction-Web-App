@@ -7,5 +7,5 @@ A lightweight Flask-based web application that uses a lexicon-based rule engine 
 - **Context-Aware Rules:** Handles token negations (e.g., "not happy") and intensifiers (e.g., "very excited").
 - **REST API Endpoint:** `/api/predict` handles JSON requests with validation and character limits.
 - **Unit Tested:** Built-in test suite using Python's `unittest`.
-
+.
   
